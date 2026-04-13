@@ -6,7 +6,7 @@ import { useLocalSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
 import { Alert, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
-import { filmes } from '../../lib/filmes';
+import { filmes } from '../../../lib/filmes';
 
 
 
