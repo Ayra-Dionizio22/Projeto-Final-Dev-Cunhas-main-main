@@ -9,6 +9,7 @@ export default function Layout() {
                         title: "Tela principal",
                         animation: "slide_from_right",
                         headerShown: false,
+                        statusBarStyle: 'dark'
                     }}
                 />
                 <Stack.Screen

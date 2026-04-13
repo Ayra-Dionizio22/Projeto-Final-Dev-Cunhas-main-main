@@ -1,15 +1,21 @@
-
 import { DrawerContentScrollView } from '@react-navigation/drawer';
 import * as ImagePicker from 'expo-image-picker';
-import { usePathname } from 'expo-router';
 import { Drawer } from 'expo-router/drawer';
 import { Eclipse, ImageUp, Sun, SunMoon } from 'lucide-react-native';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 function TabsDrawerContent(props) {
-  const pathname = usePathname();
   const [foto, setFoto] = useState(null);
+
+  useEffect(() => {
+    async function carregarImagem() {
+      const imagemSalva = await AsyncStorage.getItem("fotoPerfil");
+      if (imagemSalva) setFoto(imagemSalva);
+    }
+    carregarImagem();
+  }, []);
 
   async function escolherImagem() {
     const permissao = await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -27,7 +33,10 @@ function TabsDrawerContent(props) {
     });
 
     if (!resultado.canceled) {
-      setFoto(resultado.assets[0].uri);
+      const uri = resultado.assets[0].uri;
+      setFoto(uri);
+
+      await AsyncStorage.setItem("fotoPerfil", uri);
     }
   }
 
@@ -38,8 +47,8 @@ function TabsDrawerContent(props) {
         <Image
           source={
             foto
-            ? { uri: foto }
-            : { uri: "https://i.pravatar.cc/119" }}
+              ? { uri: foto }
+              : { uri: "https://i.pravatar.cc/119" }}
           width={64}
           height={64}
           style={style.avatar}
@@ -97,7 +106,7 @@ const style = StyleSheet.create({
   },
 
   avatar: {
-  
+
     width: 80,
     height: 80,
     borderRadius: 50,

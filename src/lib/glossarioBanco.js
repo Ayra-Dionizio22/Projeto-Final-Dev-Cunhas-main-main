@@ -2,7 +2,6 @@
 export const glossario = [
 {
     id: 76,
-    tipo: "glossario",
     videoId: "o70mOrRWO9M",
     link: "https://youtu.be/o70mOrRWO9M?si=i8Oo-iWwShv21Mep",
     titulo: "HTML",
@@ -13,7 +12,6 @@ export const glossario = [
 },
 {
     id: 77,
-    tipo: "glossario",
     videoId: "XAYlnBg-XOQ",
     link: "https://youtu.be/XAYlnBg-XOQ?si=WXf6qywXnCGvq7w3",
     titulo: "CSS",
@@ -24,7 +22,6 @@ export const glossario = [
 },
 {
     id: 78,
-    tipo: "glossario",
     videoId: "odiob83UJMk",
     link: "https://youtu.be/odiob83UJMk?si=9fSIxIn5vfgloXKm",
     titulo: "JavaScript",
@@ -35,7 +32,6 @@ export const glossario = [
 },
 {
     id: 79,
-    tipo: "glossario",
     videoId: "0uSxXV7kNWc",
     link: "https://youtu.be/0uSxXV7kNWc?si=nOcNrTqRbnDZaSrn",
     titulo: "NodeJS",
@@ -46,7 +42,6 @@ export const glossario = [
 },
 {
     id: 80,
-    tipo: "glossario",
     videoId: "bUJ9pPQmTd8",
     link: "https://youtu.be/bUJ9pPQmTd8?si=BolfqtRUi0cZikLz",
     titulo: "ReactJS",
@@ -57,7 +52,6 @@ export const glossario = [
 },
 {
     id: 81,
-    tipo: "glossario",
     videoId: "zRbwW2kki7U",
     link: "https://youtu.be/zRbwW2kki7U?si=jf-w2dbi7_91IocP",
     titulo: "API",
@@ -68,7 +62,6 @@ export const glossario = [
 },
 {
     id: 82,
-    tipo: "glossario",
     videoId: "Q2ffsGdd3M8",
     link: "https://youtu.be/Q2ffsGdd3M8?si=mBk_y2juE8b8ZF59",
     titulo: "CRUD",
@@ -79,7 +72,6 @@ export const glossario = [
 },
 {
     id: 83,
-    tipo: "glossario",
     videoId: "i2-xN-5Ud-c",
     link: "https://youtu.be/i2-xN-5Ud-c?si=X0IY8B1I-njjrn_d",
     titulo: "VsCode",
@@ -90,7 +82,6 @@ export const glossario = [
 },
 {
     id: 84,
-    tipo: "glossario",
     videoId: "hQIrO4dlSho",
     link: "https://youtu.be/hQIrO4dlSho?si=XrKw6oI1PsPBCxN6",
     titulo: "GitHub",
@@ -101,7 +92,6 @@ export const glossario = [
 },
 {
     id: 85,
-    tipo: "glossario",
     videoId: "NlP3LR5SjfU",
     link: "https://youtu.be/NlP3LR5SjfU?si=iUdCMhis17lIP9L_",
     titulo: "Git",
@@ -112,7 +102,6 @@ export const glossario = [
 },
 {
     id: 86,
-    tipo: "glossario",
     videoId: "KxjsFIDhDeo",
     link: "https://youtu.be/KxjsFIDhDeo?si=f4X6ybRPLadi2586",
     titulo: "Terminal",
@@ -123,7 +112,6 @@ export const glossario = [
 },
 {
     id: 87,
-    tipo: "glossario",
     videoId: "LX6XWNIYjJ8",
     link: "https://youtu.be/LX6XWNIYjJ8?si=BiPceleAg_lrSW3Y",
     titulo: "NPM",
@@ -134,7 +122,6 @@ export const glossario = [
 },
 {
     id: 88,
-    tipo: "glossario",
     videoId: "Pwg67ZsvM1Q",
     link: "https://youtu.be/Pwg67ZsvM1Q?si=eAJ1wzQk1Os_dC34",
     titulo: "Vite",
@@ -145,7 +132,6 @@ export const glossario = [
 },
 {
     id: 89,
-    tipo: "glossario",
     videoId: "UVPqnCi77Xw",
     link: "https://youtu.be/UVPqnCi77Xw?si=KuJyY_aQ6oJ3Q7XV",
     titulo: "Objeto",
@@ -156,7 +142,6 @@ export const glossario = [
 },
 {
     id: 90,
-    tipo: "glossario",
     videoId: "FhTA31ca7Qw",
     link: "https://youtu.be/FhTA31ca7Qw?si=TT-r0NQTwaKZJ2ft",
     titulo: "Array",
@@ -167,7 +152,6 @@ export const glossario = [
 },
 {
     id: 91,
-    tipo: "glossario",
     videoId: "oWBWYyKOumA",
     link: "https://youtu.be/oWBWYyKOumA?si=h-wZ8pUFhI2R4Nke",
     titulo: "Loop for",
@@ -178,7 +162,6 @@ export const glossario = [
 },
 {
     id: 92,
-    tipo: "glossario",
     videoId: "ooIp8ci8COI",
     link: "https://youtu.be/ooIp8ci8COI?si=FhpOf1Hxed1lmhgG",
     titulo: "Arrow Function",
@@ -189,7 +172,6 @@ export const glossario = [
 },
 {
     id: 93,
-    tipo: "glossario",
     videoId: "qDsPwZByR1Q",
     link: "https://www.youtube.com/watch?v=qDsPwZByR1Q",
     titulo: "Figma",
@@ -200,7 +182,6 @@ export const glossario = [
 },
 {
     id: 94,
-    tipo: "glossario",
     videoId: "GPcIjsz-2cA",
     link: "https://www.youtube.com/watch?v=GPcIjsz-2cA",
     titulo: "IDE",
@@ -211,7 +192,6 @@ export const glossario = [
 },
 {
     id: 95,
-    tipo: "glossario",
     videoId: "1I12u80-MNs",
     link: "https://www.youtube.com/watch?v=1I12u80-MNs&t=125s",
     titulo: "TypeScript",
@@ -222,7 +202,6 @@ export const glossario = [
 },
 {
     id: 96,
-    tipo: "glossario",
     videoId: "enl0yemuXnQ",
     link: "https://www.youtube.com/watch?v=enl0yemuXnQ",
     titulo: "Framework",
@@ -233,7 +212,6 @@ export const glossario = [
 },
 {
     id: 97,
-    tipo: "glossario",
     videoId: "dp0zB4n3MUs",
     link: "https://www.youtube.com/watch?v=dp0zB4n3MUs",
     titulo: "Biblioteca",
@@ -244,7 +222,6 @@ export const glossario = [
 },
 {
     id: 98,
-    tipo: "glossario",
     videoId: "Em0R3csNMVE",
     link: "https://www.youtube.com/watch?v=Em0R3csNMVE",
     titulo: "Front-end",
@@ -255,7 +232,6 @@ export const glossario = [
 },
 {
     id: 99,
-    tipo: "glossario",
     videoId: "Em0R3csNMVE",
     link: "https://www.youtube.com/watch?v=Em0R3csNMVE",
     titulo: "Back-end",
@@ -266,7 +242,6 @@ export const glossario = [
 },
 {
     id: 100,
-    tipo: "glossario",
     videoId: "xjH48f4uMtc",
     link: "https://www.youtube.com/watch?v=xjH48f4uMtc",
     titulo: "Banco de Dados",
@@ -277,7 +252,6 @@ export const glossario = [
 },
 {
     id: 101,
-    tipo: "glossario",
     videoId: "gJw7l2JKpuQ",
     link: "https://www.youtube.com/watch?v=gJw7l2JKpuQ",
     titulo: "Deploy",

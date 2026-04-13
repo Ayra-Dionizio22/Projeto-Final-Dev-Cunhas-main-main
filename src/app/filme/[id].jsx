@@ -31,7 +31,7 @@ export default function Filmes() {
             <YoutubePlayer
         height={300}
         play={playing}
-        videoId={"CI78kbOumTU"}
+        videoId={filme.videoId}
         onChangeState={onStateChange}
       />
      

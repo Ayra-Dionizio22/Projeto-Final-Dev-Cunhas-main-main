@@ -26,10 +26,7 @@ export default function App() {
                     <Text style={styles.title}>Em todo lugar</Text>
                 </View>
 
-                <TouchableOpacity
-                    onPress={() => router.push(`/filme/0`)}
-                    activeOpacity={0.75}
-                >
+                <View>
                     <Image
                         source={{ uri: banner }}
                         style={{
@@ -37,10 +34,9 @@ export default function App() {
                             height: 200,
                             marginTop: 10,
                             borderRadius: 24,
-
                         }}
                     />
-                </TouchableOpacity>
+                </View>
 
                 <Text style={styles.titleDestaques}>Leituras</Text>
 
@@ -51,8 +47,8 @@ export default function App() {
                 >
                     {leituras.map((filme, index) => (
                         <TouchableOpacity
-                        onPress={() => router.push(`/filme/0`)}
-                            key={filme.titulo + index}
+                        onPress={() => router.push("/leituras/" + filme.id)}
+                            key={filme.id + index}
                             style={{ width: 160 }}
                         >
                             <Image
@@ -79,6 +75,7 @@ export default function App() {
                 >
                     {videos.map((filme, index) => (
                         <TouchableOpacity
+                            onPress={() => router.push("/filme/" + filme.id)}
                             key={filme.titulo + index}
                             style={{ width: 220 }}
                         >

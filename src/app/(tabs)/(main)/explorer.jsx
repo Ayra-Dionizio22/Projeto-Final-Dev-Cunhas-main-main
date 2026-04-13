@@ -50,6 +50,7 @@ export default function Explorer() {
             key={valor + index}
             onPress={() => setCategoria(valor)}
             style={{ height: 26 }}
+            
           >
             <Text
               style={{
@@ -82,14 +83,18 @@ export default function Explorer() {
           paddingHorizontal: 16,
           rowGap: 32,
         }}
+
+        
       >
+
+        
 
         
         {moviesFiltered.map((filme, index) => (
           <TouchableOpacity
             key={filme.id + index}
             style={{ ...styles.card }}
-            onPress={() => router.push("/filme/" + filme.id)}
+            onPress={() => router.push("/leituras/" + filme.id)}
           >
             <Image
               source={{ uri: filme.capa }}

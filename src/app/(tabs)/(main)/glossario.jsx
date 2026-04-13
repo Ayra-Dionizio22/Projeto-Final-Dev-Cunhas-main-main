@@ -2,7 +2,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { glossario } from "../../../lib/glossario";
+import { glossario } from "../../../lib/glossarioBanco";
 
 export default function Explorer() {
   // const categorias = ["Todos",
@@ -33,15 +33,10 @@ export default function Explorer() {
   //   "Banco de Dados",
   //   "Deploy"]
 
-
-
   const [busca, setBusca] = useState('');
-  
 
   const moviesFiltered = glossario
-
     .filter((glossario) => glossario.titulo.toLowerCase().includes(busca.toLowerCase()))
-    // .filter((filme) => categoria === "Todos" || filme.genero.some((g) => g.texto === categoria))
 
 
   return (
@@ -95,18 +90,18 @@ export default function Explorer() {
       style={{ paddingLeft: 20 }}
       >
 
-        {moviesFiltered.map((glossario, index) => (
+        {moviesFiltered.map((filme, index) => (
           <TouchableOpacity
-            key={glossario.id + index}
+            key={filme.id + index}
             style={{ ...styles.card }}
-            onPress={() => router.push("/filme/" + glossario.id)}
+            onPress={() => router.push("/glossariosRota/" + filme.id)}
           >
             {/* <Image
-              source={{ uri: glossario.capa }}
+              source={{ uri: filme.capa }}
               style={styles.image}
             /> */}
             <View style={{ flexDirection: "row", gap: 25 }}>
-              <Text style={styles.textCard}>{glossario.titulo}</Text>
+              <Text style={styles.textCard}>{filme.titulo}</Text>
               {/* <Text style={styles.anoLancamento}>{filme.data_Lancameto}</Text> */}
             </View>
           </TouchableOpacity>

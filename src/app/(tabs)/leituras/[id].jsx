@@ -5,7 +5,7 @@
 import { useLocalSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
 import { Alert, Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import YoutubePlayer from "react-native-youtube-iframe";
+// import YoutubePlayer from "react-native-youtube-iframe";
 import { filmes } from '../../../lib/filmes';
 
 
@@ -14,98 +14,102 @@ export default function Filmes() {
     const { id } = useLocalSearchParams();
     const filme = filmes.find(filme => filme.id === Number(id));
 
-    const [playing, setPlaying] = useState(false);
+    // const [playing, setPlaying] = useState(false);
 
-    const onStateChange = useCallback((state) => {
-    if (state === "ended") {
-      setPlaying(false);
-      Alert.alert("video has finished playing!");
-    }
-  }, []);
+    //     const onStateChange = useCallback((state) => {
+    //     if (state === "ended") {
+    //       setPlaying(false);
+    //       Alert.alert("video has finished playing!");
+    //     }
+    //   }, []);
 
-  
+
 
     return (
         <ScrollView style={{ backgroundColor: "#15141F" }}>
-            
-            <YoutubePlayer
+
+            {/* <YoutubePlayer
         height={300}
         play={playing}
         videoId={"CI78kbOumTU"}
         onChangeState={onStateChange}
-      />
-     
+      /> */}
 
-    
 
             <View style={styles.content}>
                 <Text style={styles.h1}>{filme.titulo}</Text>
 
-                {/* <View style={styles.linha}> */}
+            
+                    <Image
+                        source={{ uri: filme.capa }}
+                        style={styles.imagem}
+                    />
+
+                    {/* <View style={styles.linha}> */}
                     {/* <AntDesign name="clock-circle" size={24} color="#BCBCBC" />
                     <Text style={styles.texto}>{filme.duracao} minutos</Text> */}
 
                     {/* <AntDesign name="star" size={24} color="#BCBCBC" style={{ marginLeft: 24 }} />
                     <Text style={styles.texto}>{filme.avaliacao} (IMDb)</Text> */}
-                {/* </View> */}
-
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    {/* <View style={styles.coluna}> */}
-                        {/* <Text style={styles.h2}>Data de lançamento</Text>
-                        <Text style={styles.texto}>{new Date(filme.data_Lancameto).toLocaleDateString()}</Text> */}
                     {/* </View> */}
 
-                    <View style={styles.coluna}>
-                        {/* <Text style={styles.h2}>Tags</Text> */}
-                        <View style={styles.linha}>
-                            {filme.genero.map((genero) => (
-                                <Text key={genero.id + genero.texto} style={styles.badge}>
-                                    {genero.texto}
-                                </Text>
-                            ))}
+                    <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                        {/* <View style={styles.coluna}> */}
+                        {/* <Text style={styles.h2}>Data de lançamento</Text>
+                        <Text style={styles.texto}>{new Date(filme.data_Lancameto).toLocaleDateString()}</Text> */}
+                        {/* </View> */}
+
+                        <View style={styles.coluna}>
+                            {/* <Text style={styles.h2}>Tags</Text> */}
+                            <View style={styles.linha}>
+                                {filme.genero.map((genero) => (
+                                    <Text key={genero.id + genero.texto} style={styles.badge}>
+                                        {genero.texto}
+                                    </Text>
+                                ))}
+                            </View>
                         </View>
                     </View>
-                </View>
 
-                <View style={styles.coluna}>
-                    <Text style={styles.h2}>Sinopse</Text>
-                    <Text style={styles.texto}>{filme.sinopse}</Text>
-                </View>
+                    <View style={styles.coluna}>
+                        <Text style={styles.h2}>Sinopse</Text>
+                        <Text style={styles.texto}>{filme.sinopse}</Text>
+                    </View>
 
 
-                <View style={styles.coluna}>
-                    <Text style={styles.h2}>Créditos</Text>
-                    <Text style={styles.texto}>{filme.creditos}</Text>
-                </View>
+                    <View style={styles.coluna}>
+                        <Text style={styles.h2}>Créditos</Text>
+                        <Text style={styles.texto}>{filme.creditos}</Text>
+                    </View>
 
-                <View>
-                    <Text style={styles.h2}>Filmes relacionados</Text>
+                    <View>
+                        <Text style={styles.h2}>Filmes relacionados</Text>
 
-                    <ScrollView horizontal>
-                        {filmes
-                            .filter(v => v.id !== filme.id)
-                            // .filter((v) =>
-                            //     v.genero.some(
-                            //         g => filme.genero.some(h => h.id === g.id)
-                            //     )
-                            // )
-                            .map((filme, index) => (
-                                <View key={filme.titulo + index} style={{ width: 164 }}>
-                                    <Image
-                                        source={{ uri: filme.capa }}
-                                        style={styles.imagem}
-                                    />
-                                    <View style={styles.linha}>
-                                        <Text style={styles.filme_titulo}>{filme.titulo}</Text>
-                                        <Text style={styles.filme_ano}>{new Date(filme.data_Lancameto).getFullYear()}</Text>
+                        <ScrollView horizontal>
+                            {filmes
+                                .filter(v => v.id !== filme.id)
+                                // .filter((v) =>
+                                //     v.genero.some(
+                                //         g => filme.genero.some(h => h.id === g.id)
+                                //     )
+                                // )
+                                .map((filme, index) => (
+                                    <View key={filme.titulo + index} style={{ width: 164 }}>
+                                        <Image
+                                            source={{ uri: filme.capa }}
+                                            style={styles.imagem}
+                                        />
+                                        <View style={styles.linha}>
+                                            <Text style={styles.filme_titulo}>{filme.titulo}</Text>
+                                            <Text style={styles.filme_ano}>{new Date(filme.data_Lancameto).getFullYear()}</Text>
+                                        </View>
+
                                     </View>
-
-                                </View>
-                            ))
-                        }
-                    </ScrollView>
+                                ))
+                            }
+                        </ScrollView>
+                    </View>
                 </View>
-            </View>
         </ScrollView>
     );
 }
@@ -148,5 +152,5 @@ const styles = StyleSheet.create({
     },
 
     filme_titulo: { color: "white", fontSize: 12, width: "70%" },
-    filme_ano: { color: "#BCBCBC", fontSize: 12, marginLeft: 6}
+    filme_ano: { color: "#BCBCBC", fontSize: 12, marginLeft: 6 }
 });

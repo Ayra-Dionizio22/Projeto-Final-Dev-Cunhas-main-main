@@ -6,11 +6,15 @@ import { useLocalSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
 import { Alert, Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import YoutubePlayer from "react-native-youtube-iframe";
-import { filmes } from '../../../lib/glossario';
+import { glossario } from "../../../lib/glossarioBanco";
+
+
 
 export default function Filmes() {
     const { id } = useLocalSearchParams();
-    const filme = filmes.find(filme => filme.id === Number(id));
+    const filme = glossario.find(glossario => glossario.id === Number(id));
+
+    console.log(filme)
 
     const [playing, setPlaying] = useState(false);
 
@@ -29,7 +33,7 @@ export default function Filmes() {
             <YoutubePlayer
         height={300}
         play={playing}
-        videoId={"CI78kbOumTU"}
+        videoId={filme.videoId}
         onChangeState={onStateChange}
       />
      
@@ -39,22 +43,13 @@ export default function Filmes() {
             <View style={styles.content}>
                 <Text style={styles.h1}>{filme.titulo}</Text>
 
-                {/* <View style={styles.linha}> */}
-                    {/* <AntDesign name="clock-circle" size={24} color="#BCBCBC" />
-                    <Text style={styles.texto}>{filme.duracao} minutos</Text> */}
-
-                    {/* <AntDesign name="star" size={24} color="#BCBCBC" style={{ marginLeft: 24 }} />
-                    <Text style={styles.texto}>{filme.avaliacao} (IMDb)</Text> */}
-                {/* </View> */}
+              
 
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    {/* <View style={styles.coluna}> */}
-                        {/* <Text style={styles.h2}>Data de lançamento</Text>
-                        <Text style={styles.texto}>{new Date(filme.data_Lancameto).toLocaleDateString()}</Text> */}
-                    {/* </View> */}
+                
 
                     <View style={styles.coluna}>
-                        {/* <Text style={styles.h2}>Tags</Text> */}
+                     
                         <View style={styles.linha}>
                             {filme.genero.map((genero) => (
                                 <Text key={genero.id + genero.texto} style={styles.badge}>
@@ -67,42 +62,16 @@ export default function Filmes() {
 
                 <View style={styles.coluna}>
                     <Text style={styles.h2}>Sinopse</Text>
-                    <Text style={styles.texto}>{filme.sinopse}</Text>
+                    <Text style={styles.texto}>{filme.significado}</Text>
                 </View>
 
 
-                <View style={styles.coluna}>
+                {/* <View style={styles.coluna}>
                     <Text style={styles.h2}>Créditos</Text>
                     <Text style={styles.texto}>{filme.creditos}</Text>
-                </View>
+                </View> */}
 
-                <View>
-                    <Text style={styles.h2}>Filmes relacionados</Text>
-
-                    <ScrollView horizontal>
-                        {filmes
-                            .filter(v => v.id !== filme.id)
-                            // .filter((v) =>
-                            //     v.genero.some(
-                            //         g => filme.genero.some(h => h.id === g.id)
-                            //     )
-                            // )
-                            .map((filme, index) => (
-                                <View key={filme.titulo + index} style={{ width: 164 }}>
-                                    <Image
-                                        source={{ uri: filme.capa }}
-                                        style={styles.imagem}
-                                    />
-                                    <View style={styles.linha}>
-                                        <Text style={styles.filme_titulo}>{filme.titulo}</Text>
-                                        <Text style={styles.filme_ano}>{new Date(filme.data_Lancameto).getFullYear()}</Text>
-                                    </View>
-
-                                </View>
-                            ))
-                        }
-                    </ScrollView>
-                </View>
+              
             </View>
         </ScrollView>
     );
