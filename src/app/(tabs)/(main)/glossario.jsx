@@ -1,39 +1,65 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { router } from 'expo-router';
 import { useState } from 'react';
-import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { filmes } from "../../../lib/filmes";
+import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { glossario } from "../../../lib/glossario";
 
 export default function Explorer() {
-  const categorias = ["Todos", "Iniciante", "Intermediário", "Avançado", "Design", "Programação", "Linguagem"]
+  // const categorias = ["Todos",
+  //   "HTML",
+  //   "CSS",
+  //   "JavaScript",
+  //   "NodeJS",
+  //   "ReactJS",
+  //   "API",
+  //   "CRUD",
+  //   "VsCode",
+  //   "GitHub",
+  //   "Git",
+  //   "Terminal",
+  //   "NPM",
+  //   "Vite",
+  //   "Objeto",
+  //   "Array",
+  //   "Loop for",
+  //   "Arrow Function",
+  //   "Figma",
+  //   "IDE",
+  //   "TypeScript",
+  //   "Framework",
+  //   "Biblioteca",
+  //   "Front-end",
+  //   "Back-end",
+  //   "Banco de Dados",
+  //   "Deploy"]
 
-  const [movies, setMovies] = useState(filmes)
+
 
   const [busca, setBusca] = useState('');
-  const [categoria, setCategoria] = useState('Todos');
+  
 
-  const moviesFiltered = filmes
-    .filter((filme) => filme.tipo === "video")
-    .filter((filme) => filme.titulo.toLowerCase().includes(busca.toLowerCase()))
-    .filter((filme) => categoria === "Todos" || filme.genero.some((g) => g.texto === categoria))
+  const moviesFiltered = glossario
+
+    .filter((glossario) => glossario.titulo.toLowerCase().includes(busca.toLowerCase()))
+    // .filter((filme) => categoria === "Todos" || filme.genero.some((g) => g.texto === categoria))
 
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Encontrar Videoaulas...</Text>
+      <Text style={styles.titulo}>Encontrar significados...</Text>
 
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Buscar vídeos.."
-          placeholderTextColor={"#BBB"}
+          placeholder="API..."
+          placeholderTextColor={"#f3f0f0d7"}
           value={busca}
           onChangeText={setBusca}
         />
         <Ionicons style={{ position: "absolute", left: 24 }} name="search" size={24} color="white" />
       </View>
 
-      <ScrollView
+      {/* <ScrollView
         style={{ marginLeft: 16, marginRight: 16}}
         contentContainerStyle={{ gap: 8 }}
         horizontal
@@ -63,25 +89,25 @@ export default function Explorer() {
             }
           </TouchableOpacity>
         ))}
-      </ScrollView>
+      </ScrollView> */}
 
       <ScrollView
       style={{ paddingLeft: 20 }}
       >
 
-        {moviesFiltered.map((filme, index) => (
+        {moviesFiltered.map((glossario, index) => (
           <TouchableOpacity
-            key={filme.id + index}
+            key={glossario.id + index}
             style={{ ...styles.card }}
-            onPress={() => router.push("/filme/" + filme.id)}
+            onPress={() => router.push("/filme/" + glossario.id)}
           >
-            <Image
-              source={{ uri: filme.capa }}
+            {/* <Image
+              source={{ uri: glossario.capa }}
               style={styles.image}
-            />
+            /> */}
             <View style={{ flexDirection: "row", gap: 25 }}>
-              <Text style={styles.textCard}>{filme.titulo}</Text>
-              <Text style={styles.anoLancamento}>{filme.data_Lancameto}</Text>
+              <Text style={styles.textCard}>{glossario.titulo}</Text>
+              {/* <Text style={styles.anoLancamento}>{filme.data_Lancameto}</Text> */}
             </View>
           </TouchableOpacity>
         ))}
@@ -93,7 +119,7 @@ export default function Explorer() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#15141F",
+    backgroundColor: "#fff",
     gap: 15,
     paddingTop: 16,
     paddingBottom: 10,
@@ -101,7 +127,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 24,
     fontWeight: "medium",
-    color: "#FFF",
+    color: "#49328B",
     marginHorizontal: 16,
   },
   inputContainer: {
@@ -111,11 +137,11 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    backgroundColor: "#211F30",
+    backgroundColor: "#9a88a7",
     height: 44,
     borderRadius: 12,
     paddingHorizontal: 40,
-    color: "white"
+    color: "#fff"
   },
   text: {
     color: "#fff",
@@ -124,11 +150,17 @@ const styles = StyleSheet.create({
   card: {
     width: 370,
     gap: 8,
-    paddingBottom: 15
+    paddingBottom: 15,
+    backgroundColor: "#decae1", 
+    borderColor: "#7d2b88",
+    borderRadius: 12,           
+    padding: 12,              
+    marginBottom: 8,
+    borderWidth: 2       
   },
   textCard: {
-    color: "white",
-    width: "70%"
+    color: "#7d2b88",
+    width: "80%",
   },
   anoLancamento: {
     color: "gray",

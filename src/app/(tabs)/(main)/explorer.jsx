@@ -29,8 +29,8 @@ export default function Explorer() {
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Sherlock Holmes"
-          placeholderTextColor={"#BBB"}
+          placeholder="HTML"
+          placeholderTextColor={"#f3f0f0d7"}
           value={busca}
           onChangeText={setBusca}
         />
@@ -53,7 +53,7 @@ export default function Explorer() {
           >
             <Text
               style={{
-                color: categoria === valor ? "#EF2D1A" : "white"
+                color: categoria === valor ? "#006BB3" : "#49328B"
               }}
             >
               {valor}
@@ -61,7 +61,7 @@ export default function Explorer() {
             {categoria === valor &&
               <View
                 style={{
-                  backgroundColor: "#EF2D1A",
+                  backgroundColor: "#006BB3",
                   height: 4,
                   borderRadius: 2,
                   width: "50%"
@@ -97,7 +97,7 @@ export default function Explorer() {
             />
             <View style={{ flexDirection: "row" }}>
               <Text style={styles.textCard}>{filme.titulo.slice(0, 16)}...</Text>
-              <Text style={styles.anoLancamento}>{filme.data_Lancameto.slice(0, 4)}</Text>
+              {/* <Text style={styles.anoLancamento}>{filme.data_Lancameto.slice(0, 4)}</Text> */}
             </View>
           </TouchableOpacity>
         ))}
@@ -109,7 +109,7 @@ export default function Explorer() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#15141F",
+    backgroundColor: "#FFF",
     gap: 22,
     paddingTop: 16,
     paddingBottom: 10,
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
   titulo: {
     fontSize: 24,
     fontWeight: "medium",
-    color: "#FFF",
+    color: "#49328B",
     marginHorizontal: 16,
   },
   inputContainer: {
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    backgroundColor: "#211F30",
+    backgroundColor: "#9a88a7",
     height: 44,
     borderRadius: 12,
     paddingHorizontal: 40,
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     gap: 8
   },
   textCard: {
-    color: "white",
+    color: "#49328B",
     width: "70%"
   },
   anoLancamento: {

@@ -1,7 +1,8 @@
-import { View, Text, Image, ScrollView, TouchableOpacity, StatusBar } from "react-native";
-import { styles } from "../../../styles/home";
-import { filmes } from "../../../lib/filmes";
+
 import { router } from "expo-router";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { filmes } from "../../../lib/filmes";
+import { styles } from "../../../styles/home";
 
 
 export default function App() {
@@ -50,6 +51,7 @@ export default function App() {
                 >
                     {leituras.map((filme, index) => (
                         <TouchableOpacity
+                        onPress={() => router.push(`/filme/0`)}
                             key={filme.titulo + index}
                             style={{ width: 160 }}
                         >
